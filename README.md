@@ -1,6 +1,6 @@
 # Code_CMAN
 
-This is the source code of our paper "Cognitive Memory-Augmented Network for Visual Anomaly Detection". And this code is based on [Latent Space Autoregression for Novelty Detection](https://github.com/aimagelab/novelty-detection) and [memae-anomaly-detection](https://github.com/donggong1/memae-anomaly-detection).
+This is the source code of our work "Cognitive Memory-Augmented Network for Visual Anomaly Detection". 
 
 ![network](./sources/network_architecture.png)
 
@@ -110,3 +110,7 @@ We have also performed the proposed method on image dataset. The AUC results of 
 We have also conducted a visual inspection experiment on the MVTec dataset, compared with stateof-the-art methods. The performance of the proposed method on visual inspection task is listed as follow:
 
 <img src="./sources/mvtec.png" alt="mvtec_result" style="zoom:67%;" />
+
+
+## References
+This code follows the basic structure from [Latent Space Autoregression for Novelty Detection](https://github.com/aimagelab/novelty-detection) and [memae-anomaly-detection](https://github.com/donggong1/memae-anomaly-detection).
