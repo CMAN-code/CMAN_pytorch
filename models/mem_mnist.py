@@ -163,12 +163,26 @@ class MEMMNIST(BaseModule):
 
         self.mem_rep = MemModule(mem_dim=mem_dim, fea_dim=code_length, shrink_thres =shrink_thres)
 
-    def close_grad(self):
+    def close_two_step_grad(self):
         for param in self.encoder.parameters():
             param.requires_grad = False
         for param in self.estimator.parameters():
             param.requires_grad = False
-        print("model need not grad")
+
+    def close_one_step_grad(self):
+        self.open_grad() 
+        for param in self.mem_rep.parameters():
+            param.requires_grad = False
+    
+    def open_grad(self):
+        for param in self.encoder.parameters():
+            param.requires_grad = True
+        for param in self.estimator.parameters():
+            param.requires_grad = True
+        for param in self.decoder.parameters():
+            param.requires_grad = True
+        for param in self.mem_rep.parameters():
+            param.requires_grad = True
 
     def get_parameters(self):
         return chain(self.decoder.parameters(), self.mem_rep.parameters())
